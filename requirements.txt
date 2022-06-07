@@ -1,0 +1,4 @@
+argparse
+tensorflow==2.7.1
+# wandb
+git+https://github.com/wandb/client.git@summerhack/launch#egg=wandb[launch]
