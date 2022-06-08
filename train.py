@@ -65,11 +65,11 @@ if __name__ == "__main__":
     while time.time() - start_time < args.train_time:
         time_remaining = int(args.train_time - (time.time() - start_time))
         print(f'\tTraining, {time_remaining} seconds remaining.')
-        wandb.log({"alive_time": time_remaining})
+        wandb.log({"foo_metric": time_remaining})
         for _device in _devices:
             with tf.device(_device):
-                a = tf.random.normal([64, 64], 0, 1, tf.float32)
-                b = tf.random.normal([64, 64], 0, 1, tf.float32)
+                a = tf.random.normal([32, 32], 0, 1, tf.float32)
+                b = tf.random.normal([32, 32], 0, 1, tf.float32)
                 c = tf.matmul(a, b)
 
 
