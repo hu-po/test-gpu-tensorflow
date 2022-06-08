@@ -68,8 +68,8 @@ if __name__ == "__main__":
         wandb.log({"alive_time": time_remaining})
         for _device in _devices:
             with tf.device(_device):
-                a = tf.random.normal([100, 100], 0, 1, tf.float32)
-                b = tf.random.normal([100, 100], 0, 1, tf.float32)
+                a = tf.random.normal([64, 64], 0, 1, tf.float32)
+                b = tf.random.normal([64, 64], 0, 1, tf.float32)
                 c = tf.matmul(a, b)
 
 
