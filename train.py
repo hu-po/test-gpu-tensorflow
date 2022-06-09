@@ -20,7 +20,7 @@ parser.add_argument("--train_time", type=int, default=30)
 TARGET_GPU_UTILIZATION = 0.9
 MIN_LOG_INTERVAL = 0.1
 GPU_MEM_GROWTH_RATE = 1.07
-INITIAL_TENSOR_SIZE = 8
+INITIAL_TENSOR_SIZE = 16
 
 if __name__ == "__main__":
     args = parser.parse_args()
@@ -91,7 +91,7 @@ if __name__ == "__main__":
         time_remaining = int(args.train_time - (time.time() - start_time))
         # Don't spam too much
         if old_time_remaining - time_remaining < MIN_LOG_INTERVAL:
-            continue
+            pass # continue
         old_time_remaining = time_remaining
         print(f'\tTraining, {time_remaining} seconds remaining.')
         wandb.log({"time.remaining": time_remaining})
